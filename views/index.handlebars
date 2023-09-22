@@ -1,0 +1,29 @@
+<div class="bg-light p-5 rounded-lg m-3">
+  <h1 class="display-4">Bem vindo ao Blog do Node!</h1>
+  <p class="lead mt-4">Olá, boas vindas ao meu Blog de NodeJS. Me chamo Davi Souza, sou desenvolvedor de software e criei este blog para que ele seja uma valiosa fonte de informações para outros desenvolvedores que desejam aprender mais sobre Node.js e as tecnologias relacionadas.</p>
+  <p class="lead mt-4">Este blog é um funcional servidor Express com mecanismos de CRUD com MongoDB por Mongoose, populate, slugs, mensagens flash, verificação de segurança em duas etapas, Hash para salvamento de senhas, Bootstrap, sessions, LocalStrategy, Router, arquiteturas MVVM, Passport para autenticação de usuário, versionamento com Git e Deploy na Cyclic.</p>
+  <hr class="my-4">
+  <p style="font-size: 1.2em;">Sinta-se a vontade para testar as funcionalidades!</p>
+  <p>Fale comigo pelo LinkedIn: <a href="https://www.linkedin.com/in/davinsouza01/" target="_blank">linkedin.com/in/davinsouza01/</a></p>
+  <p class="mt-3">Veja os meus projetos práticos no GitHub: <a href="https://github.com/DaviSouza01" target="_blank">github.com/DaviSouza01</a></p>
+  <a class="btn btn-primary btn-lg mt-2" href="/usuarios/registro" role="button">Participe da nossa comunidade!</a>
+</div> 
+
+<hr>
+
+<h2>Postagens recentes: </h2>
+
+{{#each postagens}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>{{titulo}}</h4>
+            <p>{{descricao}}</p>
+            <a href="/post/{{slug}}"><button class="btn btn-success">Ler mais</button></a>
+            <hr>
+            <small>{{categoria.nome}}</small>
+            <small>Data de Publicação: {{data}}</small>
+        </div>
+    </div>
+{{else}}
+    <h5 class="mt-4">Nenhuma postagem registrada!</h5>
+{{/each}}

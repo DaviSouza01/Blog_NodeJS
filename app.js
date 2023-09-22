@@ -26,6 +26,9 @@ mongoose
   )
   .then(() => {
     console.log("Conectado ao MongoDB com sucesso!");
+    app.listen(port, () => {
+      console.log("Servidor iniciado com sucesso na porta " + port);
+    });
   })
   .catch((err) => {
     console.log("Erro ao se conectar com o MongoDB: " + err);
@@ -154,8 +157,4 @@ app.get("/categorias/:slug", (req, res) => {
       req.flash("error_msg", "Houve um erro ao listar a página desta categoria.");
       res.redirect("/");
     });
-});
-
-app.listen(port, () => {
-  console.log("Servidor iniciado com sucesso na porta " + port);
 });

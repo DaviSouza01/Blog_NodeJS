@@ -45,11 +45,14 @@ const store = new MongoDBStore({
   collection: "sessions",
 });
 
+app.set("trust proxy", 1);
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true,
+    proxy: true,
     cookie: {
       maxAge: null,
       httpOnly: true,
